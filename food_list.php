@@ -4,28 +4,13 @@
 
 include("connection.php");
 include("add_food.php");
-
+include("delete.php");
 
 // Retrieve existing food items from the database
 $query = "SELECT * FROM food";
 $result = mysqli_query($con, $query);
 
-// Check if the delete action is requested
-if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && $_GET["action"] == "delete" && isset($_GET["food_id"])) {
-    $food_id_to_delete = $_GET["food_id"];
 
-    // Perform the deletion in the database
-    $delete_query = "DELETE FROM food WHERE food_id = $food_id_to_delete";
-    $delete_result = mysqli_query($con, $delete_query);
-
-    if ($delete_result) {
-        
-        echo "Food item deleted successfully!";
-    } else {
-        
-        echo "Error deleting food item: " . mysqli_error($con);
-    }
-}
 
 // Display existing food items
 echo "<div class='table-container'>";
@@ -48,10 +33,21 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <td>{$row['food_protein']}</td>
                 <td>{$row['food_fat']}</td>
                 <td>
-                <a href='food_list.php?action=delete&food_id={$row['food_id']}'>Delete</a>
-                </td>
-                <td>
-                <a href='today.php?action=add&food_id={$row['food_id']}'>Add to Today</a>
+                <form action='food_list.php' method='get'>
+                    <input type='hidden' name='action' value='delete'>
+                    <input type='hidden' name='food_id' value='{$row['food_id']}'>
+                    <button type='submit'>Delete</button>
+                </form>
+                <form action='edit.php' method='get'>
+                    <input type='hidden' name='action' value='edit'>
+                    <input type='hidden' name='food_id' value='{$row['food_id']}'>
+                    <button type='submit'>Edit</button>
+                </form>
+                <form action='today.php' method='get'>
+                    <input type='hidden' name='action' value='add'>
+                    <input type='hidden' name='food_id' value='{$row['food_id']}'>
+                    <button type='submit'>Add to Today</button>
+                </form>
                 </td>
               </tr>";
     }
