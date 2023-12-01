@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["action"]) && $_GET["acti
     $food_id_to_add = $_GET["food_id"];
 
     // Retrieve the selected food item from the database based on $food_id_to_add
-    $query = "SELECT * FROM food WHERE food_id = $$";
+    $query = "SELECT * FROM food WHERE food_id = $food_id_to_add";
     $result = mysqli_query($con, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
@@ -89,7 +89,7 @@ foreach ($_SESSION["today_food_list"] as $selected_food) {
     <td>{$total_carb}</td>
     <td>{$total_protein}</td>
     <td>{$total_fat}</td>
-    <td></td>  <!-- Placeholder for the 'Action' column -->
+    <td></td>  
     </tr>";
     ?>
 </table>
@@ -100,9 +100,17 @@ foreach ($_SESSION["today_food_list"] as $selected_food) {
 <br>
 <br>
 
-<a href="index.php">home</a>
-<a href="food_list.php">food list</a>
-<a href="piechart.php">View Pie Chart</a>
+<p> this is where you will see your macro breakdown, adjust your food calories as you see fit 😃</p>
+
+
+<ul>
+    <li>click <a href="index.php">home</a></li>
+    <li><a href="food_list.php">food list</a></li>
+ 
+
+
+    <a href="piechart.php">View Pie Chart</a>
+
 
 </body>
 </html>

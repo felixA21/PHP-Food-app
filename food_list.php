@@ -36,17 +36,17 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <form action='food_list.php' method='get'>
                     <input type='hidden' name='action' value='delete'>
                     <input type='hidden' name='food_id' value='{$row['food_id']}'>
-                    <button type='submit'>Delete</button>
+                    <button type='submit' class='btn-delete'>Delete</button>
                 </form>
                 <form action='edit.php' method='get'>
                     <input type='hidden' name='action' value='edit'>
                     <input type='hidden' name='food_id' value='{$row['food_id']}'>
-                    <button type='submit'>Edit</button>
+                    <button type='submit' class='btn-edit'>Edit</button>
                 </form>
                 <form action='today.php' method='get'>
                     <input type='hidden' name='action' value='add'>
                     <input type='hidden' name='food_id' value='{$row['food_id']}'>
-                    <button type='submit'>Add to Today</button>
+                    <button type='submit' class='btn-atdy'>Add to Today</button>
                 </form>
                 </td>
               </tr>";

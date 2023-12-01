@@ -12,7 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["food_id"])) {
         $edit_row = mysqli_fetch_assoc($edit_result);
 
         echo "
-        <form action='edit.php' method='post'>
+        <!DOCTYPE html>
+        <html lang='en'>
+        <head>
+            <meta charset='UTF-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Edit Food</title>
+            <link rel='stylesheet' href='styles.css'>
+        </head>
+        <body>
+        <div class = 'edit-form'>
+        <form action='edit.php' method='post' class='form-foodAdd'>
             <input type='hidden' name='food_id' value='{$edit_row['food_id']}'>
             <label>Food Name:</label>
             <input type='text' name='food_name' value='{$edit_row['food_name']}' required>
@@ -26,8 +36,12 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["food_id"])) {
             <label>Fat:</label>
             <input type='number' name='food_fat' value='{$edit_row['food_fat']}' required>
 
-            <button type='submit' name='update'>Update</button>
-        </form>";
+            <button type='submit' name='update' class='btn-lr'>Update</button>
+        </form>
+        </div>
+        
+        </body>
+        </html>";
     } else {
         echo "Error fetching food details: " . mysqli_error($con);
     }

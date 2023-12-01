@@ -56,7 +56,7 @@ $username = $_SESSION['username'];
         <div class="content">
             <div class="content-paragraph">
 
-                <p>"Keeping track of your calorie intake is a powerful and empowering step towards a healthier, more balanced lifestyle. Just as a pilot meticulously monitors the fuel gauge of an aircraft for a smooth journey, understanding and managing your caloric consumption is crucial for your body's optimal performance. It serves as a compass guiding you toward your health and wellness goals, whether it be weight management, increased energy levels, or overall well-being. By acknowledging and recording what you consume, you gain a profound awareness of your nutritional choices, fostering a mindful relationship with food. In this journey, every entry becomes a small victory, a conscious decision towards a healthier version of yourself. Tracking calories is not about restriction but rather a tool for informed and intentional nourishment, empowering you to make choices that align with your health aspirations. As you embark on this journey of self-care, remember that the commitment to monitoring your caloric intake is a commitment to yourself, a pledge to fuel your body with the respect and care it deserves."</P>
+                <img class="body-img" src="meal1.jpg" alt="meal img">
             </div>
         </div>    
 

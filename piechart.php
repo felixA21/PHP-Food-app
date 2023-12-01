@@ -10,6 +10,14 @@
     <title>Pie Chart</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        body {
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; 
+            margin: 0;
+        }
         #myPieChart {
             width: 450px;
             height: 450px;

@@ -21,13 +21,10 @@ ul {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   background: #333;
   color: #fff;
   padding: 25px;
+  margin-top: auto;
 }
 
 /*LOGIN OR REGISTER*/
@@ -136,6 +133,10 @@ form input {
   line-height: 1.5;
 }
 
+.body-img {
+  width: 90%;
+}
+
 /*food list*/
 .form-foodAdd {
   display: flex;
@@ -161,4 +162,24 @@ form input {
   flex-direction: column;
   width: 100%;
   align-items: center;
+}
+
+.btn-atdy {
+  background-color: rgb(28, 210, 201);
+}
+
+.btn-delete {
+  background-color: rgb(206, 42, 42);
+}
+
+.btn-edit {
+  background-color: rgb(192, 206, 42);
+}
+
+/* edit form */
+
+.edit-form {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
